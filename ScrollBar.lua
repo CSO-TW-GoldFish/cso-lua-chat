@@ -143,8 +143,12 @@ function ScrollBar:Update()
 	end
 end
 
-function ScrollBar:Add()
-	self.currentCount = self.currentCount + 1
+function ScrollBar:Add(num)
+	if not num then
+		self.currentCount = self.currentCount + 1
+	else
+		self.currentCount = num
+	end
 	self:Update()
 end
 
